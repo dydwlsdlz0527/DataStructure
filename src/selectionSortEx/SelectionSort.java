@@ -6,14 +6,19 @@ public class SelectionSort {
 		int least, temp;
 		for(int i=0;i<n-1;i++) {
 			least = i;
+			//최소값 탐색
 			for(int j=i+1;j<n;j++) {
 				if(arr[j]<arr[least]) {
 					least = j;
 				}
 			}
-			temp = arr[i];
-			arr[i] = arr[least];
-			arr[least] = temp;
+			//위치 교환
+			//최소값이 자기 자신이면 교환하지 않는다.
+			if(i!=least) {
+				temp = arr[i];
+				arr[i] = arr[least];
+				arr[least] = temp;
+			}
 		}
 	}
 
